@@ -1,10 +1,18 @@
 <?php 
 	$controlador = new ControladorUsuarios();
 	if (isset($_POST['enviar'])) {
-		$r = $controlador->crear(0, $_POST['user_name'], password_hash($_POST['password'], PASSWORD_BCRYPT), $_POST['type']);
+
+		if ($_POST['password']) {
+			$type = 'LOCAL';
+		} else {
+			$type = 'FTP';
+		}
+
+		$r = $controlador->crear(0, $_POST['user_name'], password_hash($_POST['password'], PASSWORD_BCRYPT), $type);
 
 		if ($r) {
 			echo "Se ha registrado un nuevo usuario";
+			header('Location: ../sisWebUnirTodo/index.php');
 		} else {
 			echo "El nombre de usuario que esta intentando ingresar ya existe";
 		}
@@ -17,13 +25,7 @@
 	<input type="text" name="user_name" required="required">
 	<br><br>
 	<label>Contraseña</label><br>
-	<input type="text" name="password" required="required">
-	<br><br>
-	<label>Tipo</label><br>
-	<select name="type" required="required">
-		<option value="LOCAL">LOCAL</option>
-		<option value="FTP">FTP</option>
-	</select>
+	<input type="text" name="password">
 	<br><br>
 	<input type="submit" name="enviar" value="Crear">
 </form>

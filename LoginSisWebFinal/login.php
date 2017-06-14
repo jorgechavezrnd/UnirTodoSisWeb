@@ -14,6 +14,7 @@
 		<br/><br/>
 		<input type="submit" value="Login">
 	</form>
-	<h1><a href="../sisWebUnirTodo/index.php">IR A PAGINA PRINCIPAL SIN INICIAR SECION</a></h1>
+	<h1><a href="../sisWebUnirTodo/index.php">IR A PAGINA PRINCIPAL SIN INICIAR SECION</a></h1><br><br>
+	<h1><a href="../CrearUsuarioSisWebFinal/?cargar=crear">Crear Usuario</a></h1>
 </body>
 </html>

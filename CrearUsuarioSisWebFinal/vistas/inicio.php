@@ -7,7 +7,6 @@
 	<thead>
 		<th>Id</th>
 		<th>Nombre de Usuario</th>
-		<th>Contraseña</th>
 		<th>Tipo</th>
 	</thead>
 	<tbody>
@@ -15,7 +14,6 @@
 			<tr>
 				<td><?php echo $row['id'] ?></td>
 				<td><?php echo $row['user_name'] ?></td>
-				<td><?php echo $row['password'] ?></td>
 				<td><?php echo $row['type'] ?></td>
 				<td>
 					<a href="?cargar=ver&id=<?php echo $row['id']; ?>">Ver</a>
