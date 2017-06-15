@@ -8,43 +8,57 @@
 	<meta charset="utf-8">
 	<title>Vista Principal</title>
 	<link href="css/estilos.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/semantic/dist/semantic.min.css">
+  	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+  	<script src="css/semantic/dist/semantic.min.js"></script>
 </head>
 <body>
 	<header id="cabeceraIndex">
-		<img src="imagenes/logo.jpg" alt="UCB logo" width="150" height="200">
-		<img src="imagenes/banner.jpg" alt="baner ingenieria en sistemas" width="1050" height="200">
-	</header>
+	    <div class="ui sticky container segment fluid" style="padding-left:0; padding-right:0; padding-bottom:0;">
+	      <div class="ui two column grid">
+	        <div class="row">
 
-	<nav>
-		<table id="tablaOpciones">
-			<tr class="opciones">
-				<th>
-					<a class="button" href="?cargar=noticias">Noticias</a>
-				</th>
-				<th>
-					<a class="button" href="?cargar=informacion">Informacion General</a>
-				</th>
-				<th>
-					<a class="button" href="?cargar=plantel">Plantel Docente</a>
-				</th>
-				<th>
-					<a class="button" href="?cargar=cursos">Cursos de Formacion Continua</a>
-				</th>
-			</tr>
-			<?php 
+		        <div class="one wide column">
+		        </div>
 
-				session_start();
+		         <div class="three wide column">
+		           <div class="ui small image">
+		              <img src="imagenes/logoucb.gif">
+		            </div>
+		          </div>
 
-				if (isset($_SESSION["user_name"])) {
-					echo '<p><a href="../LoginSisWebFinal/cierre.php">Cierra Sesión</a></p>';
-				} else {
-					echo '<p><a href="../LoginSisWebFinal/login.php">Inicia Sesión</a></p>';
-				}
+		          <div class="eleven wide column">
+		            <div class="ui massive image">
+		              <img src="imagenes/Ingenieria-de-Sistemas.jpg">
+		            </div>
+		          </div>
 
-			?>
-		</table>
-	</nav>
+		          <div class="one wide column">
+		          </div>
 
+	        </div>
+	      </div>
+	   	</div>
+  	</header>
+
+	<div class="ui inverted menu" style="margin:auto; background-color: #0B0B3B;">
+	    <a class="item" href="../sisWebUnirTodo/?cargar=noticias">Noticias</a>
+	    <a class="item" href="../sisWebUnirTodo/?cargar=informacion">Información General</a>
+	    <a class="item" href="../sisWebUnirTodo/?cargar=plantel">Plantel Docente</a>
+	    <a class="item" href="../sisWebUnirTodo/?cargar=cursos">Cursos de Formación Continua</a>
+	    <?php 
+
+	    	session_start();
+
+	    	if (isset($_SESSION["user_name"])) {
+	      		echo '<a class="item" href="../LoginSisWebFinal/cierre.php">Cierra Sesión</a>';
+    		} else {
+	      		echo '<a class="item" href="../LoginSisWebFinal/login.php">Inicia Sesión</a>';
+	    	}
+
+	  	?>
+	</div>
+	<br><br>
 	<section>
  		<?php 
  			$enrutador = new Enrutador();

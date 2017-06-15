@@ -30,7 +30,7 @@
 
 		public function validarGET($variable) {
 			if (empty($variable)) {
-				include_once('vistas/noticias.php');
+				header("Location: ../Noticias/index.php");
 			} else {
 				return true;
 			}

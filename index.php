@@ -1,3 +1,3 @@
 <?php 
-	header("Location: LoginSisWebFinal/login.php");
+	header("Location: siswebUnirTodo/index.php");
 ?>
